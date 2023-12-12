@@ -11,7 +11,7 @@ public class Main {
     public static int os() {
         return 0;
     }
-
+// не знаю правильно ли задание №3
     public static int distance() {
         return 90;
     }
