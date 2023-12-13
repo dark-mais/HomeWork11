@@ -1,49 +1,44 @@
+import java.time.Instant;
+
 public class Main {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-    }
-    public static int year(){
-        return 2024;
+        System.out.println("Задание №1:");
+        checkIsLeapYear(2020);
+        checkIsLeapYear(2022);
+        checkIsLeapYear(2023);
+        checkIsLeapYear(2003);
+        System.out.println("Задание №2:");
+        os(0);
+        os(1);
+        System.out.println("Задание №3:");
+        distance(5);
+        distance(55);
+        distance(65);
+        distance(102);
     }
 
-    public static int os() {
-        return 0;
-    }
-// не знаю правильно ли задание №3
-    public static int distance() {
-        return 90;
-    }
+    //задание №1
+    private static void checkIsLeapYear(int year) {
 
-    private static void task1() {
-        //задача1
-        System.out.println("Задача №1.");
-        int year = year();
-        if (year >= 1584) {
-            int year1 = year % 4;
-            if (year1 == 0) System.out.println(year + " год является високосным");
-            else {
-                System.out.println(year + " год не является високосным");
-            }
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println(year + " - високосный год");
         } else {
-            System.out.println(year + " год не является високосным");
+            System.out.println(year + " - не високосный год");
         }
     }
 
-    private static void task2() {
-        //задача2
-        System.out.println("задача №2.");
-        int clientOS2 = os();
-        int clientDeviceYear = year();
+    //задача №2
 
-        if (clientOS2 == 1) {
+    private static void os(int clientOS) {
+        //задача2
+        int clientDeviceYear = 2023;
+        if (clientOS == 1) {
             if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             } else {
                 System.out.println("Установите обычную версию приложения для Android по ссылке");
             }
-        } else if (clientOS2 == 0) {
+        } else if (clientOS == 0) {
             if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             } else {
@@ -52,10 +47,7 @@ public class Main {
         }
     }
 
-    private static void task3() {
-        //задача3
-        System.out.println("Задача №3.");
-        int deliveryDistance = distance();
+    private static void distance(int deliveryDistance) {
         int day = 1;
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: " + day);
